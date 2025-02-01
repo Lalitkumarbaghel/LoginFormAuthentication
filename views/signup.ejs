@@ -49,20 +49,22 @@
      <section class="container"> 
         <div class="row justify-content-center pt-5">
 
-          <% if(messages.err){ %>
-              <p style="color: red;"><%= messages.err %>></p>
-            <% } %>
+          
+          
             <div class="col-md-8">
-            <form  action='/api'  method="post" >
+              <% if( messages.err){ %>
+                <p style="color: red;"><%=messages.err%></p>
+                <%}%>
+            <form  action='/'  method="POST" >
                 <div class="mb-3">
                     <div class="row">
                         <div class="col-md-6">
                             <label  class="form-label">Enter First Name*</label>
-                            <input type="text" name="fst_name" class="form-control" placeholder="Enter First Name">
+                            <input type="text" name="fst_name" value="<%= messages.fst_name%>" class="form-control" placeholder="Enter First Name">
                         </div>
                         <div class="col-md-6">
                             <label  class="form-label">Enter Last Name*</label>
-                            <input type="text" name="lst_name" class="form-control" placeholder="Enter Last Name">
+                            <input type="text" name="lst_name" value="<%= messages.lst_name%>" class="form-control" placeholder="Enter Last Name">
                         </div>
                     </div>
                     
@@ -71,11 +73,11 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label  class="form-label">Enter Email Id*</label>
-                            <input type="email" name="email" class="form-control" placeholder="Enter Email Id">
+                            <input type="email" name="email" value="<%= messages.email%>" class="form-control" placeholder="Enter Email Id">
                         </div>
                         <div class="col-md-6">
                             <label  class="form-label">Enter Mobile Number*</label>
-                            <input type="number" name="mobile_n" class="form-control" placeholder="Enter Mobile Number">
+                            <input type="number" name="mobile_n" value="<%= messages.mobile_n%>"  class="form-control" placeholder="Enter Mobile Number">
                         </div>
                     </div>
                     

@@ -1,8 +1,10 @@
-const express = require('express');
-const router = express.Router();
-const {getformpage, postform} = require('../app/controllers/auth')
+const authController = require('../app/controllers/auth')
 
-router.route('/')
-.get(getformpage)
-.post(postform);
-module.exports = router;
+function routeInit(app){
+    //app.get('/', authController().home)
+    app.get('/', authController().register)
+    app.post('/', authController().postregister)
+}
+
+
+module.exports = routeInit;
